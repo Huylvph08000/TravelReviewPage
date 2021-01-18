@@ -11,7 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface TravelPlaceRepository extends JpaRepository<TravelPlace, Long> {
     @Query("select travelplace from TravelPlace travelplace where travelplace.name = ?1")
     TravelPlace findByName(String travelPlaceName);
-//    TravelPlace createPost(TravelPlace travelPlace);
-
 
 }

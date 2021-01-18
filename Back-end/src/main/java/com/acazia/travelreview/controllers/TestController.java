@@ -1,7 +1,9 @@
 package com.acazia.travelreview.controllers;
 
 import com.acazia.travelreview.models.Comment;
+import com.acazia.travelreview.models.CommentReply;
 import com.acazia.travelreview.models.TravelPlace;
+import com.acazia.travelreview.repository.CommentReplyRepository;
 import com.acazia.travelreview.repository.CommentRepository;
 import com.acazia.travelreview.repository.TravelPlaceRepository;
 import com.acazia.travelreview.security.services.TravelPlaceService;
@@ -19,7 +21,8 @@ public class TestController {
 	TravelPlaceRepository travelPlaceRepository;
 	@Autowired
 	CommentRepository commentRepository;
-	private TravelPlaceService travelPlaceService;
+	@Autowired
+	CommentReplyRepository commentReplyRepository;
 	@GetMapping("/all")
 	public String allAccess() {
 		return "Public Content.";
@@ -39,6 +42,7 @@ public class TestController {
 	public String adminAccess() {
 		return "Admin Board.";
 	}
+
 	@GetMapping("/travelplaces")
 	public List<TravelPlace> getAllTravelPlaces(){
 		return travelPlaceRepository.findAll();
@@ -47,6 +51,10 @@ public class TestController {
 	public List<Comment> getAllComment(){
 		return commentRepository.findAll();
 	}
+	@GetMapping("/commentReplies")
+	public List<CommentReply> getAllCommentReply(){
+		return commentReplyRepository.findAll();
+	}
 
 	// tim kiem theo ten
 	@GetMapping("/travelplaces/name/{name}")
@@ -54,8 +62,17 @@ public class TestController {
 		return travelPlaceRepository.findByName(name);
 	}
    //	tao moi
+
 	@PostMapping("/travelplaces")
 	public TravelPlace travelPlace(@RequestBody TravelPlace travelPlace) {
 		return travelPlaceRepository.save(travelPlace);
+	}
+	@PostMapping("/comments")
+	public Comment comment(@RequestBody Comment comment) {
+		return commentRepository.save(comment);
+	}
+	@PostMapping("/commentReplies")
+	public CommentReply commentReply(@RequestBody CommentReply commentReply) {
+		return commentReplyRepository.save(commentReply);
 	}
 }

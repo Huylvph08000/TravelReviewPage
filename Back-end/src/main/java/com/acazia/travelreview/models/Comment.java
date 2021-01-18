@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -27,7 +28,7 @@ public class Comment {
     @ToString.Exclude
     private User user;
 
-    @JsonBackReference
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "travelplace_id")
     @EqualsAndHashCode.Exclude
@@ -35,16 +36,26 @@ public class Comment {
     @JsonIgnoreProperties("travelplace")
     private TravelPlace travelPlace;
 
-
+//    @JsonManagedReference
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @JsonIgnoreProperties("comment")
+    private Collection<CommentReply> commentReplies;
 
     public Comment() {
     }
 
-    public Comment(Long id, @NotBlank @Size(max = 100) String content, TravelPlace travelPlace, User user) {
+    public Comment(Long id) {
+        this.id = id;
+    }
+
+    public Comment(Long id, @NotBlank @Size(max = 100) String content, User user, TravelPlace travelPlace, Collection<CommentReply> commentReplies) {
         this.id = id;
         this.content = content;
-        this.travelPlace = travelPlace;
         this.user = user;
+        this.travelPlace = travelPlace;
+        this.commentReplies = commentReplies;
     }
 
     public Long getId() {
@@ -63,14 +74,6 @@ public class Comment {
         this.content = content;
     }
 
-    public TravelPlace getTravelPlace() {
-        return travelPlace;
-    }
-
-    public void setTravelPlace(TravelPlace travelPlace) {
-        this.travelPlace = travelPlace;
-    }
-
     public User getUser() {
         return user;
     }
@@ -79,4 +82,19 @@ public class Comment {
         this.user = user;
     }
 
+    public TravelPlace getTravelPlace() {
+        return travelPlace;
+    }
+
+    public void setTravelPlace(TravelPlace travelPlace) {
+        this.travelPlace = travelPlace;
+    }
+
+    public Collection<CommentReply> getCommentReplies() {
+        return commentReplies;
+    }
+
+    public void setCommentReplies(Collection<CommentReply> commentReplies) {
+        this.commentReplies = commentReplies;
+    }
 }

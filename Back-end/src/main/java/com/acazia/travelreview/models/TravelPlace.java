@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import net.bytebuddy.implementation.bind.annotation.Default;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -31,18 +32,13 @@ public class TravelPlace {
     private String adress;
     private int liked;
 
-    @JsonManagedReference
+//    @JsonManagedReference
     @OneToMany(mappedBy = "travelPlace", cascade = CascadeType.ALL)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @JsonIgnoreProperties("travelPlace")
     private Collection<Comment> comments;
 
-//    @JsonBackReference
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    @EqualsAndHashCode.Exclude
-//    @ToString.Exclude
-//    private User user;
     @ManyToOne
     @JoinColumn(name = "user_id")
     @EqualsAndHashCode.Exclude
@@ -52,8 +48,12 @@ public class TravelPlace {
     public TravelPlace() {
     }
 
+    public TravelPlace(Long id) {
+        this.id = id;
+    }
 
-    public TravelPlace(@NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String adress, int liked, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String adress, int liked, Collection<Comment> comments, User user) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.country = country;
