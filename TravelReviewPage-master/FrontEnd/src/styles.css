@@ -1,0 +1,43 @@
+body{
+  margin: 0;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  padding-right: 30px;
+}
+
+.content {
+  color: white;
+  text-decoration: none;
+}
+
+.icon {
+  color: #b4b4b4;
+}
+
+.content:hover {
+  color: #55b6ff;
+  text-decoration: none;
+}
+
+.icon:hover {
+  color: white;
+}
+
+input:focus {
+  outline: none
+}
+
+button:focus {
+  outline: none
+}
