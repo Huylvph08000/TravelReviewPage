@@ -6,7 +6,6 @@ import com.acazia.travelreview.models.TravelPlace;
 import com.acazia.travelreview.repository.CommentReplyRepository;
 import com.acazia.travelreview.repository.CommentRepository;
 import com.acazia.travelreview.repository.TravelPlaceRepository;
-import com.acazia.travelreview.security.services.TravelPlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -42,35 +41,37 @@ public class TestController {
 	public String adminAccess() {
 		return "Admin Board.";
 	}
-
+//get all travel place
 	@GetMapping("/travelplaces")
 	public List<TravelPlace> getAllTravelPlaces(){
 		return travelPlaceRepository.findAll();
 	}
+//get all comments
 	@GetMapping("/comments")
 	public List<Comment> getAllComment(){
 		return commentRepository.findAll();
 	}
+//get all comments reply
 	@GetMapping("/commentReplies")
 	public List<CommentReply> getAllCommentReply(){
 		return commentReplyRepository.findAll();
 	}
-
-	// tim kiem theo ten
+//find travelPlace by name
 	@GetMapping("/travelplaces/name/{name}")
 	public TravelPlace findByName(@PathVariable("name") String name){
 		return travelPlaceRepository.findByName(name);
 	}
-   //	tao moi
-
+//add new travelPlace
 	@PostMapping("/travelplaces")
 	public TravelPlace travelPlace(@RequestBody TravelPlace travelPlace) {
 		return travelPlaceRepository.save(travelPlace);
 	}
+   // add a comment
 	@PostMapping("/comments")
 	public Comment comment(@RequestBody Comment comment) {
 		return commentRepository.save(comment);
 	}
+  // add a comment reply
 	@PostMapping("/commentReplies")
 	public CommentReply commentReply(@RequestBody CommentReply commentReply) {
 		return commentReplyRepository.save(commentReply);

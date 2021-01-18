@@ -31,6 +31,7 @@ public class TravelPlace {
     private String province;
     private String adress;
     private int liked;
+    private int rate;
 
 //    @JsonManagedReference
     @OneToMany(mappedBy = "travelPlace", cascade = CascadeType.ALL)
@@ -52,7 +53,7 @@ public class TravelPlace {
         this.id = id;
     }
 
-    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String adress, int liked, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String adress, int liked, int rate, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -60,6 +61,7 @@ public class TravelPlace {
         this.province = province;
         this.adress = adress;
         this.liked = liked;
+        this.rate = rate;
         this.comments = comments;
         this.user = user;
     }
@@ -118,6 +120,14 @@ public class TravelPlace {
 
     public void setLiked(int liked) {
         this.liked = liked;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public Collection<Comment> getComments() {
