@@ -59,7 +59,7 @@ public class TestController {
 //find travelPlace by name
 	@GetMapping("/travelplaces/name/{name}")
 	public TravelPlace findByName(@PathVariable("name") String name){
-		return travelPlaceRepository.findByName(name);
+		return travelPlaceRepository.findAllByNameContaining(name);
 	}
 //add new travelPlace
 	@PostMapping("/travelplaces")

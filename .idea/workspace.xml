@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17c28683-6cdb-441e-99ab-9c06a0647c83" name="Default Changelist" comment="" />
+    <list default="true" id="17c28683-6cdb-441e-99ab-9c06a0647c83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/repository/TravelPlaceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/repository/TravelPlaceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +51,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,7 +67,6 @@
       <option name="presentableId" value="Default" />
       <updated>1610596597624</updated>
       <workItem from="1610596598705" duration="174000" />
-      <workItem from="1610941816562" duration="63000" />
     </task>
     <servers />
   </component>
@@ -73,12 +83,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610941878548">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1610941878548" />
     <state x="541" y="261" key="Github.ShareDialog" timestamp="1610596643643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -87,5 +94,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="417" y="68" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610596663798" />
+    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611127075324">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1611127075324" />
   </component>
 </project>

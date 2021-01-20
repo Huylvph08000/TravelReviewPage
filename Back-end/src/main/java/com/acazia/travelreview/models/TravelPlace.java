@@ -29,7 +29,7 @@ public class TravelPlace {
     private String description;
     private String country;
     private String province;
-    private String adress;
+    private String address;
     private int liked;
     private int rate;
 
@@ -53,13 +53,13 @@ public class TravelPlace {
         this.id = id;
     }
 
-    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String adress, int liked, int rate, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String address, int liked, int rate, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.country = country;
         this.province = province;
-        this.adress = adress;
+        this.address = address;
         this.liked = liked;
         this.rate = rate;
         this.comments = comments;
@@ -106,12 +106,12 @@ public class TravelPlace {
         this.province = province;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getLiked() {

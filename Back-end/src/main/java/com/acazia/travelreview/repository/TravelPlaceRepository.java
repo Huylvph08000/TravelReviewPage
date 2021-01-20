@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TravelPlaceRepository extends JpaRepository<TravelPlace, Long> {
-    @Query("select travelplace from TravelPlace travelplace where travelplace.name = ?1")
+//    @Query("select travelplace from TravelPlace travelplace where travelplace.name = ?1")
     TravelPlace findByName(String travelPlaceName);
 
+    TravelPlace findAllByNameContaining(String name);
 }
