@@ -10,7 +10,7 @@ export class DestinationService{
   private readonly API_DESTINATION = 'http://localhost:8080/api/test/travelplaces';
   constructor(private httpClient: HttpClient) { }
   showDesList(): Observable<Destination[]>{
-    return this.httpClient.get<Destination[]>(`${this.API_DESTINATION}/list`);
+    return this.httpClient.get<Destination[]>(`${this.API_DESTINATION}`);
   }
   createDes(des: Destination): Observable<Destination>{
     return this.httpClient.post<Destination>(`${this.API_DESTINATION}/create`, des);
