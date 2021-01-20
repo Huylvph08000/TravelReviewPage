@@ -1,0 +1,42 @@
+.header{
+  background-color: black;
+  height: 50px;
+  z-index: 30;
+  background-size: cover;
+  position: fixed;
+}
+.header-list{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-feature-item{
+  padding: 0;
+}
+.header-feature-list{
+  justify-content: center;
+}
+.header-login{
+  ;
+}
+.search{
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  border: 0;
+  width: 100%;
+  background: inherit;
+  color: #b4b4b4;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  transition: width .3s ease-in;
+}
+.search-submit{
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  border: 0;
+  background: inherit;
+  color: #b4b4b4;
+}

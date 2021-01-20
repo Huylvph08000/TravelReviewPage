@@ -1,0 +1,31 @@
+<div class="text-center">
+  <h2>List</h2>
+</div>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">name</th>
+    <th scope="col">description</th>
+    <th scope="col">country</th>
+    <th scope="col">provide</th>
+    <th scope="col">address</th>
+    <th scope="col">rating</th>
+    <th scope="col">likes</th>
+    <th scope="col">user</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let des of desList">
+    <th scope="row">{{des.id}}</th>
+    <td>{{des.name}}</td>
+    <td>{{des.description}}</td>
+    <td>{{des.country}}</td>
+    <td>{{des.provide}}</td>
+    <td>{{des.address}}</td>
+    <td>{{des.rating}}</td>
+    <td>{{des.likes}}</td>
+    <td>{{des.user}}</td>
+  </tr>
+  </tbody>
+</table>
