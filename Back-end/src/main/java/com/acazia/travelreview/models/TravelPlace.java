@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Set;
 
@@ -32,6 +34,8 @@ public class TravelPlace {
     private String address;
     private int liked;
     private int rate;
+    private String image;
+    private LocalDate timeCreated = LocalDate.now();
 
 //    @JsonManagedReference
     @OneToMany(mappedBy = "travelPlace", cascade = CascadeType.ALL)
@@ -49,11 +53,7 @@ public class TravelPlace {
     public TravelPlace() {
     }
 
-    public TravelPlace(Long id) {
-        this.id = id;
-    }
-
-    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String address, int liked, int rate, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String address, int liked, int rate, String image, LocalDate timeCreated, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -62,6 +62,8 @@ public class TravelPlace {
         this.address = address;
         this.liked = liked;
         this.rate = rate;
+        this.image = image;
+        this.timeCreated = timeCreated;
         this.comments = comments;
         this.user = user;
     }
@@ -128,6 +130,22 @@ public class TravelPlace {
 
     public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public LocalDate getTimeCreated() {
+        return timeCreated;
+    }
+
+    public void setTimeCreated(LocalDate timeCreated) {
+        this.timeCreated = timeCreated;
     }
 
     public Collection<Comment> getComments() {
