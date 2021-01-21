@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17c28683-6cdb-441e-99ab-9c06a0647c83" name="Default Changelist" comment="fix fe by HuyLe">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/models/TravelPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/models/TravelPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/repository/TravelPlaceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Back-end/src/main/java/com/acazia/travelreview/repository/TravelPlaceRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
