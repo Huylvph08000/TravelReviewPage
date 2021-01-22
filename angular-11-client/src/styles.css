@@ -1,6 +1,11 @@
 body{
   margin: 0;
 }
+.font-style{
+  color: #23aef4;
+  text-align: center;
+  font-family: Amarante;
+}
 .sticky {
   position: fixed;
   top: 0;
@@ -10,6 +15,7 @@ body{
 .list {
   display: flex;
   list-style: none;
+  margin-top: 11px;
 }
 
 .item {
@@ -23,6 +29,7 @@ body{
 
 .icon {
   color: #b4b4b4;
+  margin: 0;
 }
 
 .content:hover {

@@ -10,14 +10,11 @@
   justify-content: space-between;
   width: 100%;
 }
-.header-feature-item{
-  padding: 0;
+.header-feature-item {
+  justify-content: flex-end;
 }
 .header-feature-list{
   justify-content: center;
-}
-.header-login{
-  ;
 }
 .search{
   border: none;

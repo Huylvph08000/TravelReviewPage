@@ -1,0 +1,41 @@
+.body-top{
+  padding-top: 10%;
+}
+.name-style{
+  color: #23aef4;
+  font-family: Amarante;
+}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+hr.new1{
+  border: 2px solid #23aef4;
+  border-radius: 5px;
+  max-width: 5%;
+}
+.button{
+  padding: 9px 15px;
+  border: 2px solid #55b6ff;
+  background: 0 0;
+  color: #55b6ff;
+  letter-spacing: .06em;
+}
+.des{
+  font-size: 100%;
+}
+.picture{
+  padding: 0px;
+  width: 500px;
+  height: 300px;
+}
+.thumbnail{
+  padding: 5px;
+  width: 300px;
+  height: 307px;
+}
+.heading-body{
+  color: #23aef4;
+}

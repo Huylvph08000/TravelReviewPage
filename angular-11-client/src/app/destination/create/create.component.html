@@ -1,0 +1,20 @@
+<div class="grid">
+  <div class="row">
+    <div class="col l-12 m-12 c-12">
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+            <div *ngIf="desForm.get('description').invalid && desForm.get('description').touched" style="color: red">
+              Description is required and min length is 2
+            </div>
+            <ck-editor name="editor" (keyup)='onKeyup($event)' [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true">
+            </ck-editor>
+
+
+            <button type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,6 @@ export class DestinationService{
     return this.httpClient.get<Destination[]>(`${this.API_DESTINATION}`);
   }
   createDes(des: Destination): Observable<Destination>{
-    return this.httpClient.post<Destination>(`${this.API_DESTINATION}/create`, des);
+    return this.httpClient.post<Destination>(`${this.API_DESTINATION}`, des);
   }
 }

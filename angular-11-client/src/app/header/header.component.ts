@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   title = 'travel-review-front-end';
   private roles: string[] = [];
   isLoggedIn = false;
+  isLoggedOut = false;
   username?: string;
 
   constructor(private tokenStorageService: TokenStorageService) {

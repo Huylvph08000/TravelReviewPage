@@ -1,47 +1,93 @@
 <nav class="header sticky grid">
-  <div class="header-list">
-    <div class="header-icon-list ">
-      <ul class="header-icon-item list ">
-        <li class="icon-item item icon">
-          <a href="" class="icon fb"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li class="header-icon-item item icon">
-          <a href="" class="icon instagram"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li class="header-icon-item item icon">
-          <a href="" class="icon twiter"><i class="fab fa-twitter-square"></i></a>
-        </li>
-      </ul>
+  <div class="header-list row">
+    <div class="col l-4 l-4 m-12 c-12">
+      <div class="header-icon-list ">
+        <ul class="header-icon-item list ">
+          <li class="icon-item item icon">
+            <a href="" class="icon fb"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li class="header-icon-item item icon">
+            <a href="" class="icon instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="header-icon-item item icon">
+            <a href="" class="icon twitter"><i class="fab fa-twitter-square"></i></a>
+          </li>
+          <div class="header-search list icon item ">
+            <button class="search-submit icon"><i class="fas fa-search "></i></button>
+            <input id="header-search" class="search" type="search" placeholder="Search..">
+          </div>
+        </ul>
+      </div>
     </div>
-    <div class="header-feature-list header-list">
+    <div class="col l-4 l-4 m-12 c-12">
+      <div class="header-feature-list header-list">-->
+        <ul class="header-feature-item list">
+          <li class="feature-item item ">
+            <a href="/home" class="content" routerLink="home">HOME</a>
+          </li>
+          <li class="feature-item item ">
+            <a class="content" routerLink="/destination/list">DESTINATION</a>
+          </li>
+          <li class="feature-item item" *ngIf="isLoggedIn">
+            <a class="content" routerLink="/destination/create">MAKE NEW</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col l-4 l-4 m-12 c-12">
       <ul class="header-feature-item list">
-        <li class="feature-item item ">
-          <a href="/home" class="content" routerLink="home">HOME</a>
+        <li class="feature-item item">
+          <a href="/login" class="content" *ngIf="!isLoggedIn" routerLink="login">LOGIN</a>
         </li>
-        <li class="feature-item item ">
-          <a class="content" routerLink="/destination/list">DESTINATION</a>
-        </li>
-        <li class="feature-item item" >
+        <li class="feature-item item" *ngIf="!isLoggedIn">
           <a href="/register" class="content" routerLink="register">SIGN UP</a>
         </li>
-        <li class="feature-item item">
-          <a href="/login" class="content" routerLink="login">LOGIN</a>
+        <li class="feature-item item" *ngIf="isLoggedIn">
+          <a href="/profile" class="content" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="feature-item item" *ngIf="isLoggedIn">
+          <a href class="content" (click)="logout()">LOGOUT</a>
         </li>
       </ul>
-
-
-    </div>
-    <ul class="header-login list" *ngIf="isLoggedIn">
-      <li class="feature-item item">
-        <a href="/profile" class="content" routerLink="profile">{{ username }}</a>
-      </li>
-      <li class="feature-item item">
-        <a href class="content" (click)="logout()">LOGOUT</a>
-      </li>
-    </ul>
-    <div class="header-search list item ">
-      <button class="search-submit icon"><i class="fas fa-search "></i></button>
-      <input  id="header-search" class="search" type="search" placeholder="Search.." >
     </div>
   </div>
 </nav>
+
+
+<!--<nav class="header sticky grid">-->
+<!--  <div class="header-list">-->
+<!--
+<!--    <div class="header-feature-list header-list">-->
+<!--      <ul class="header-feature-item list">-->
+<!--        <li class="feature-item item ">-->
+<!--          <a href="/home" class="content" routerLink="home">HOME</a>-->
+<!--        </li>-->
+<!--        <li class="feature-item item ">-->
+<!--          <a class="content" routerLink="/destination/list">DESTINATION</a>-->
+<!--        </li>-->
+<!--        <ul class="header-feature-item list " >-->
+<!--          <li class="feature-item item" *ngIf = "isLoggedIn">-->
+<!--            <a class="content" routerLink="/destination/create">MAKE NEW</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--
+<!--    <ul class="list">-->
+<!--      <li class="feature-item item">-->
+<!--        <a href="/login" class="content" *ngIf = "!isLoggedIn" routerLink="login">LOGIN</a>-->
+<!--      </li>-->
+<!--      <li class="feature-item item" >-->
+<!--        <a href="/register" class="content" *ngIf = "!isLoggedIn" routerLink="register">SIGN UP</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--    <ul class="header-login list" *ngIf = "isLoggedIn">-->
+<!--      <li class="feature-item item">-->
+<!--        <a href="/profile" class="content" routerLink="profile">{{ username }}</a>-->
+<!--      </li>-->
+<!--      <li class="feature-item item">-->
+<!--        <a href class="content" (click)="logout()">LOGOUT</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</nav>-->

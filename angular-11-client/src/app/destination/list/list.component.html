@@ -1,31 +1,29 @@
-<div class="text-center">
-  <h2>List</h2>
+<div class="grid wide container">
+  <div class="body-top">
+    <div class="row" *ngFor="let des of desList">
+      <div class="grid wide" style="display: flex">
+        <div class="row">
+          <div class="menu-list col l-8 m-12 c-12">
+            <div class="grid wide">
+              <div class="row" style="flex-wrap: unset">
+                <div class="col l-6 m-6 c-12 thumbnail">
+                  <img
+                    class="thumbnail" src="{{des.img}}"
+                    alt="halong">
+                </div>
+                <div class="des col l-6 m-6 c-12" >
+                  <p>{{des.datetime}}</p>
+                  <h1 class="name-style">{{des.name}}</h1>
+                  <p class="line-clamp ">{{des.description}}</p>
+                  <button class="button font-style">Reading</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="side-bar col l-4 m-0 c-0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<table class="table">
-  <thead class="thead-light">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">name</th>
-    <th scope="col">description</th>
-    <th scope="col">country</th>
-    <th scope="col">provide</th>
-    <th scope="col">address</th>
-    <th scope="col">rating</th>
-    <th scope="col">likes</th>
-    <th scope="col">user</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let des of desList">
-    <th scope="row">{{des.id}}</th>
-    <td>{{des.name}}</td>
-    <td>{{des.description}}</td>
-    <td>{{des.country}}</td>
-    <td>{{des.province}}</td>
-    <td>{{des.adress}}</td>
-    <td>{{des.rate}}</td>
-    <td>{{des.like}}</td>
-    <td>{{des.user.username}}</td>
-  </tr>
-  </tbody>
-</table>
