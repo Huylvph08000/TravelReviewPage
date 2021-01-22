@@ -42,11 +42,6 @@ export class CreateComponent implements OnInit {
       }
     );
   }
-
-  onKeyup = (event) => {
-    console.log(event.target.value);
-  }
-
   onSubmit(): void {
     if (this.desForm.valid) {
       const {value} = this.desForm;

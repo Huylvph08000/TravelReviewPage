@@ -7,7 +7,7 @@
             <div *ngIf="desForm.get('description').invalid && desForm.get('description').touched" style="color: red">
               Description is required and min length is 2
             </div>
-            <ck-editor name="editor" (keyup)='onKeyup($event)' [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true">
+            <ck-editor name="editor"[(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true">
             </ck-editor>
 
 
