@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -61,6 +62,11 @@ public class TestController {
 	public TravelPlace findByName(@PathVariable("name") String name){
 		return travelPlaceRepository.findAllByNameContaining(name);
 	}
+	//find travelPlace by id
+	@GetMapping("/travelplaces/id/{id}")
+	public Optional<TravelPlace> findById(@PathVariable("id") Long id){
+		return travelPlaceRepository.findById(id);
+	}
 //add new travelPlace
 	@PostMapping("/travelplaces")
 	public TravelPlace travelPlace(@RequestBody TravelPlace travelPlace) {
@@ -71,7 +77,7 @@ public class TestController {
 	public Comment comment(@RequestBody Comment comment) {
 		return commentRepository.save(comment);
 	}
-  // add a comment reply
+  // add a reply comment
 	@PostMapping("/commentReplies")
 	public CommentReply commentReply(@RequestBody CommentReply commentReply) {
 		return commentReplyRepository.save(commentReply);
