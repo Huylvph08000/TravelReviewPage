@@ -77,7 +77,7 @@ public class TestController {
 	public Comment comment(@RequestBody Comment comment) {
 		return commentRepository.save(comment);
 	}
-  // add a comment reply
+  // add a reply comment
 	@PostMapping("/commentReplies")
 	public CommentReply commentReply(@RequestBody CommentReply commentReply) {
 		return commentReplyRepository.save(commentReply);
