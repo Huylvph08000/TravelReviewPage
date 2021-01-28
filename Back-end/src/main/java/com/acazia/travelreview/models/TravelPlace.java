@@ -32,7 +32,12 @@ public class TravelPlace {
     private String address;
     private int liked;
     private int rate;
-    private String image;
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private ImageModel image;
+
     private LocalDate timeCreated = LocalDate.now();
 
 //    @JsonManagedReference
@@ -47,10 +52,11 @@ public class TravelPlace {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private User user;
+
     public TravelPlace() {
     }
 
-    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, String country, String province, String address, int liked, int rate, String image, LocalDate timeCreated, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank String name, String description, String country, String province, String address, int liked, int rate, ImageModel image, LocalDate timeCreated, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -75,6 +81,14 @@ public class TravelPlace {
 
     public String getName() {
         return name;
+    }
+
+    public ImageModel getImage() {
+        return image;
+    }
+
+    public void setImage(ImageModel image) {
+        this.image = image;
     }
 
     public void setName(String name) {
@@ -129,13 +143,7 @@ public class TravelPlace {
         this.rate = rate;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public LocalDate getTimeCreated() {
         return timeCreated;
