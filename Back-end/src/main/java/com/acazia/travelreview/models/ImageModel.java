@@ -22,7 +22,7 @@ public class ImageModel {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "picByte", length = 1000)
+    @Column(name = "picByte", length = 100)
     private byte[] picByte;
 
     public Long getId() {

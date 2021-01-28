@@ -49,7 +49,6 @@ public class TravelPlace {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private User user;
-
     public TravelPlace() {
     }
 
