@@ -12,7 +12,5 @@ import java.util.Optional;
 public interface TravelPlaceRepository extends JpaRepository<TravelPlace, Long> {
     @Query("select travelplace from TravelPlace travelplace where travelplace.id = ?1")
     Optional<TravelPlace> findById(Long id);
-
-
     TravelPlace findAllByNameContaining(String name);
 }
