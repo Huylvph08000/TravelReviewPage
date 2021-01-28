@@ -24,10 +24,8 @@ public class TravelPlace {
     private Long id;
 
     @NotBlank
-    @Size(max = 100)
     private String name;
 
-    @Size(max = 500)
     private String description;
     private String country;
     private String province;
