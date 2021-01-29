@@ -1,5 +1,8 @@
 package com.acazia.travelreview.models;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,11 +11,7 @@ public class ImageModel {
     public ImageModel() {
         super();
     }
-    public ImageModel(String name, String type, byte[] picByte) {
-        this.name = name;
-        this.type = type;
-        this.picByte = picByte;
-    }
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +20,25 @@ public class ImageModel {
     private String name;
     @Column(name = "type")
     private String type;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private TravelPlace travelPlace;
 
     @Column(name = "picByte",length = 1000)
     private byte[] picByte;
+
+    public ImageModel(Long id, String name, String type, TravelPlace travelPlace, byte[] picByte) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.travelPlace = travelPlace;
+        this.picByte = picByte;
+    }
+
+    public ImageModel(String originalFilename, String contentType, byte[] compressBytes) {
+    }
 
     public Long getId() {
         return id;
@@ -47,6 +62,14 @@ public class ImageModel {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public TravelPlace getTravelPlace() {
+        return travelPlace;
+    }
+
+    public void setTravelPlace(TravelPlace travelPlace) {
+        this.travelPlace = travelPlace;
     }
 
     public byte[] getPicByte() {

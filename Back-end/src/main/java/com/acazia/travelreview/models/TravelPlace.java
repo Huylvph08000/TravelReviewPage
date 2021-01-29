@@ -32,11 +32,16 @@ public class TravelPlace {
     private String address;
     private int liked;
     private int rate;
-    @ManyToOne
-    @JoinColumn(name = "image_id")
+//    @ManyToOne
+//    @JoinColumn(name = "image_id")
+//    @EqualsAndHashCode.Exclude
+//    @ToString.Exclude
+//    private ImageModel image;
+    @OneToMany(mappedBy = "travelPlace", cascade = CascadeType.ALL)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private ImageModel image;
+    @JsonIgnoreProperties("travelPlace")
+    private Collection<ImageModel> images;
 
     private LocalDate timeCreated = LocalDate.now();
 
@@ -56,7 +61,7 @@ public class TravelPlace {
     public TravelPlace() {
     }
 
-    public TravelPlace(Long id, @NotBlank String name, String description, String country, String province, String address, int liked, int rate, ImageModel image, LocalDate timeCreated, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank String name, String description, String country, String province, String address, int liked, int rate, Collection<ImageModel> images, LocalDate timeCreated, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -65,7 +70,7 @@ public class TravelPlace {
         this.address = address;
         this.liked = liked;
         this.rate = rate;
-        this.image = image;
+        this.images = images;
         this.timeCreated = timeCreated;
         this.comments = comments;
         this.user = user;
@@ -81,14 +86,6 @@ public class TravelPlace {
 
     public String getName() {
         return name;
-    }
-
-    public ImageModel getImage() {
-        return image;
-    }
-
-    public void setImage(ImageModel image) {
-        this.image = image;
     }
 
     public void setName(String name) {
@@ -143,7 +140,13 @@ public class TravelPlace {
         this.rate = rate;
     }
 
+    public Collection<ImageModel> getImages() {
+        return images;
+    }
 
+    public void setImages(Collection<ImageModel> images) {
+        this.images = images;
+    }
 
     public LocalDate getTimeCreated() {
         return timeCreated;
