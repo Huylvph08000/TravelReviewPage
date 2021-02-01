@@ -69,22 +69,22 @@ public class TestController {
 	public String adminAccess() {
 		return "Admin Board.";
 	}
-//get all travel place
+	//get all travel place
 	@GetMapping("/travelplaces")
 	public List<TravelPlace> getAllTravelPlaces(){
 		return travelPlaceRepository.findAll();
 	}
-//get all comments
+	//get all comments
 	@GetMapping("/comments")
 	public List<Comment> getAllComment(){
 		return commentRepository.findAll();
 	}
-//get all comments reply
+	//get all comments reply
 	@GetMapping("/commentReplies")
 	public List<CommentReply> getAllCommentReply(){
 		return commentReplyRepository.findAll();
 	}
-//find travelPlace by name
+	//find travelPlace by name
 	@GetMapping("/travelplaces/name/{name}")
 	public TravelPlace findByName(@PathVariable("name") String name){
 		return travelPlaceRepository.findAllByNameContaining(name);
@@ -94,17 +94,17 @@ public class TestController {
 	public Optional<TravelPlace> findById(@PathVariable("id") Long id){
 		return travelPlaceRepository.findById(id);
 	}
-//add new travelPlace
+	//add new travelPlace
 	@PostMapping("/travelplaces")
 	public TravelPlace travelPlace(@RequestBody TravelPlace travelPlace) {
 		return travelPlaceRepository.save(travelPlace);
 	}
-   // add a comment
+	// add a comment
 	@PostMapping("/comments")
 	public Comment comment(@RequestBody Comment comment) {
 		return commentRepository.save(comment);
 	}
-  // add a reply comment
+	// add a reply comment
 	@PostMapping("/commentReplies")
 	public CommentReply commentReply(@RequestBody CommentReply commentReply) {
 		return commentReplyRepository.save(commentReply);

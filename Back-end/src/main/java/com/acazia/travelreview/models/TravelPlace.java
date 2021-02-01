@@ -27,11 +27,13 @@ public class TravelPlace {
     private String name;
 
     private String description;
+    private String short_description;
     private String country;
     private String province;
     private String address;
     private int liked;
     private int rate;
+    private String fileName;
 //    @ManyToOne
 //    @JoinColumn(name = "image_id")
 //    @EqualsAndHashCode.Exclude
@@ -61,19 +63,29 @@ public class TravelPlace {
     public TravelPlace() {
     }
 
-    public TravelPlace(Long id, @NotBlank String name, String description, String country, String province, String address, int liked, int rate, Collection<ImageModel> images, LocalDate timeCreated, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank String name, String description, String short_description, String country, String province, String address, int liked, int rate, String fileName, Collection<ImageModel> images, LocalDate timeCreated, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.short_description = short_description;
         this.country = country;
         this.province = province;
         this.address = address;
         this.liked = liked;
         this.rate = rate;
+        this.fileName = fileName;
         this.images = images;
         this.timeCreated = timeCreated;
         this.comments = comments;
         this.user = user;
+    }
+
+    public String getShort_description() {
+        return short_description;
+    }
+
+    public void setShort_description(String short_description) {
+        this.short_description = short_description;
     }
 
     public Long getId() {
@@ -138,6 +150,14 @@ public class TravelPlace {
 
     public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public Collection<ImageModel> getImages() {
