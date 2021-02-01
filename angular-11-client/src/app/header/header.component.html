@@ -19,11 +19,11 @@
         </ul>
       </div>
     </div>
-    <div class="col l-4 l-4 m-12 c-12">
-      <div class="header-feature-list header-list">-->
+    <div class="col l-4 m-12 c-12">
+      <div class="header-feature-list header-list">
         <ul class="header-feature-item list">
           <li class="feature-item item ">
-            <a href="/home" class="content" routerLink="home">HOME</a>
+            <a  class="content" routerLink="home">HOME</a>
           </li>
           <li class="feature-item item ">
             <a class="content" routerLink="/destination/list">DESTINATION</a>
@@ -34,7 +34,7 @@
         </ul>
       </div>
     </div>
-    <div class="col l-4 l-4 m-12 c-12">
+    <div class="col l-4 m-12 c-12">
       <ul class="header-feature-item list">
         <li class="feature-item item">
           <a href="/login" class="content" *ngIf="!isLoggedIn" routerLink="login">LOGIN</a>
@@ -52,42 +52,3 @@
     </div>
   </div>
 </nav>
-
-
-<!--<nav class="header sticky grid">-->
-<!--  <div class="header-list">-->
-<!--
-<!--    <div class="header-feature-list header-list">-->
-<!--      <ul class="header-feature-item list">-->
-<!--        <li class="feature-item item ">-->
-<!--          <a href="/home" class="content" routerLink="home">HOME</a>-->
-<!--        </li>-->
-<!--        <li class="feature-item item ">-->
-<!--          <a class="content" routerLink="/destination/list">DESTINATION</a>-->
-<!--        </li>-->
-<!--        <ul class="header-feature-item list " >-->
-<!--          <li class="feature-item item" *ngIf = "isLoggedIn">-->
-<!--            <a class="content" routerLink="/destination/create">MAKE NEW</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--
-<!--    <ul class="list">-->
-<!--      <li class="feature-item item">-->
-<!--        <a href="/login" class="content" *ngIf = "!isLoggedIn" routerLink="login">LOGIN</a>-->
-<!--      </li>-->
-<!--      <li class="feature-item item" >-->
-<!--        <a href="/register" class="content" *ngIf = "!isLoggedIn" routerLink="register">SIGN UP</a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    <ul class="header-login list" *ngIf = "isLoggedIn">-->
-<!--      <li class="feature-item item">-->
-<!--        <a href="/profile" class="content" routerLink="profile">{{ username }}</a>-->
-<!--      </li>-->
-<!--      <li class="feature-item item">-->
-<!--        <a href class="content" (click)="logout()">LOGOUT</a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</nav>-->

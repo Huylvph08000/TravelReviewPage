@@ -1,5 +1,6 @@
 .body-top{
-  padding-top: 10%;
+  margin-top: 6%;
+  margin-bottom: 6%;
 }
 .name-style{
   color: #23aef4;
@@ -32,10 +33,17 @@ hr.new1{
   height: 300px;
 }
 .thumbnail{
-  padding: 5px;
-  width: 300px;
-  height: 307px;
+  width: 200px;
+  height: 250px;
 }
 .heading-body{
   color: #23aef4;
+}
+.side-bar{
+  background-color: black;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  min-height: 1px;
+  padding-left: 45px;
 }

@@ -5,6 +5,8 @@ import {ListComponent} from './list/list.component';
 import {NgModule} from '@angular/core';
 import { CreateComponent } from './create/create.component';
 import {CKEditorModule} from 'ngx-ckeditor';
+import {ReviewComponent} from './review/review.component';
+
 
 const routes: Routes = [
   {
@@ -14,11 +16,15 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent
+  },
+  {
+    path: 'review/:id',
+    component: ReviewComponent
   }
 ];
 
 @NgModule({
-  declarations: [ListComponent, CreateComponent],
+  declarations: [ListComponent, CreateComponent, ReviewComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

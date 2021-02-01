@@ -1,15 +1,17 @@
 import {User} from './user';
-
+import {Image} from './image';
 export interface Destination {
-  datetime: number;
-  img: string;
-  id?: number;
+  timeCreated: string;
+  thumbnail: Image;
+  file: any;
+  id: number;
   name: string;
-  description: string;
+  shortDescription: string;
+  description?: string;
   country: string;
   province: string;
   address: string;
   rate: number;
   like: number;
-  user: User;
+  user?: User;
 }

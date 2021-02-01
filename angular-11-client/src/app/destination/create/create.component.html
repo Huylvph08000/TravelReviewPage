@@ -1,20 +1,70 @@
-<div class="grid">
-  <div class="row">
-    <div class="col l-12 m-12 c-12">
-      <div class="card">
-        <div class="card-body">
-          <form (ngSubmit)="onSubmit()">
-<!--            <div *ngIf="desForm.get('description').invalid && desForm.get('description').touched" style="color: red">-->
-<!--              Description is required and min length is 2-->
-<!--            </div>-->
-            <ck-editor name="editor" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true">
-            </ck-editor>
-
-
-            <button type="submit" class="btn btn-success">Save</button>
-          </form>
+<form [formGroup]="desForm" novalidate (ngSubmit)="onSubmit()">
+  <div class="grid wide">
+    <!--name-->
+    <div class="row">
+      <div class="col l-6 m-6 c-12">
+        <div class="form-group">
+          <label>Title:</label>
+          <input class="form-control" type="text" placeholder="Enter the Name" formControlName="name"/>
+        </div>
+      </div>
+      <!-- country-->
+      <div class="col l-6 m-6 c-12">
+        <div class="form-group">
+          <label>Country:</label>
+          <input class="form-control" type="text" placeholder="Enter the Country" formControlName="country"/>
+        </div>
+      </div>
+    </div>
+    <!--province-->
+    <div class="row">
+      <div class="col l-6 m-6 c-12">
+        <div class="form-group">
+          <label>Province:</label>
+          <input class="form-control" type="text" placeholder="Enter the province" formControlName="province"/>
+        </div>
+      </div>
+      <!--address-->
+      <div class="col l-6 m-6 c-12">
+        <div class="form-group">
+          <label>Address:</label>
+          <input class="form-control" type="text" placeholder="Enter the address" formControlName="address"/>
+        </div>
+      </div>
+    </div>
+    <!--    File-->
+    <div class="row">
+      <div class="col l-6 m-6 c-12">
+        <div class="form-group">
+          <label>thumbnail: </label>
+          <input class="form-control" type="file" (change)="onFileChange($event)" formControlName="thumbnail">
         </div>
       </div>
     </div>
   </div>
-</div>
+<!--  short description-->
+  <div class="row">
+    <div class="col l-6 m-6 c-12">
+      <div class="form-group">
+        <label>Short description: </label>
+        <textarea class="form-control" formControlName="shortDescription"></textarea>
+      </div>
+    </div>
+  </div>
+  <!--    author-->
+  <fieldset formGroupName="user" style="display: none">
+    <input [(ngModel)]="id" class="form-control" formControlName="id"/>
+  </fieldset>
+  <!--description-->
+  <div class="row">
+    <div class="col l-12 m-12 c-12">
+      <div class="form-group">
+        <label>Write a review: </label>
+        <ck-editor name="editor" formControlName="description" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+      </div>
+    </div>
+  </div>
+  <!--    upload img & file-->
+  <button type="submit" value="Post" class="btn btn-success" style=" background-color: black; border: none">Post
+  </button>
+</form>

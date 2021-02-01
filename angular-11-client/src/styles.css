@@ -1,6 +1,9 @@
 body{
   margin: 0;
 }
+.body-top{
+  margin-bottom: 4%;
+}
 .font-style{
   color: #23aef4;
   text-align: center;

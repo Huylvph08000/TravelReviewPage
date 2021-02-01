@@ -1,29 +1,28 @@
-<div class="grid wide container">
-  <div class="body-top">
-    <div class="row" *ngFor="let des of desList">
-      <div class="grid wide" style="display: flex">
-        <div class="row">
-          <div class="menu-list col l-8 m-12 c-12">
-            <div class="grid wide">
-              <div class="row" style="flex-wrap: unset">
-                <div class="col l-6 m-6 c-12 thumbnail">
-                  <img
-                    class="thumbnail" src="{{des.img}}"
-                    alt="halong">
-                </div>
-                <div class="des col l-6 m-6 c-12" >
-                  <p>{{des.datetime}}</p>
-                  <h1 class="name-style">{{des.name}}</h1>
-                  <p class="line-clamp ">{{des.description}}</p>
-                  <button class="button font-style">Reading</button>
-                </div>
-              </div>
-            </div>
+<div class="grid wide">
+  <div class="row"></div>
+  <div *ngFor="let des of desList">
+    <div class="menu-list col l-8 m-12 c-12">
+      <div>
+        <div class="row body-top">
+          <div class="col l-4 m-0 c-0 thumbnail">
+            <img
+              class="thumbnail"src="{{des.thumbnail}}"
+              alt="image">
           </div>
-          <div class="side-bar col l-4 m-0 c-0">
+          <div class="des col l-8 m-12 c-12">
+            <p style="display: none">{{des.id}}</p>
+            <p>{{des.timeCreated}}</p>
+            <h1 class="name-style">{{des.name}}</h1>
+            <p>Author: {{des.user?.username}}</p>
+            <p class="line-clamp " [innerHTML]='des.shortDescription'></p>
+            <button (click)= "desDetails(des.id)" class="button font-style">Reading</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col l-4 m-0 c-0" style="background-color: black"></div>
+  </div>
 </div>
+

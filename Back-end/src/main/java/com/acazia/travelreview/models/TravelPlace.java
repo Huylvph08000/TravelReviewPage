@@ -27,7 +27,7 @@ public class TravelPlace {
     private String name;
 
     private String description;
-    private String short_description;
+    private String shortDescription;
     private String country;
     private String province;
     private String address;
@@ -63,11 +63,11 @@ public class TravelPlace {
     public TravelPlace() {
     }
 
-    public TravelPlace(Long id, @NotBlank String name, String description, String short_description, String country, String province, String address, int liked, int rate, String fileName, Collection<ImageModel> images, LocalDate timeCreated, Collection<Comment> comments, User user) {
+    public TravelPlace(Long id, @NotBlank String name, String description, String shortDescription, String country, String province, String address, int liked, int rate, String fileName, Collection<ImageModel> images, LocalDate timeCreated, Collection<Comment> comments, User user) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.short_description = short_description;
+        this.shortDescription = shortDescription;
         this.country = country;
         this.province = province;
         this.address = address;
@@ -80,12 +80,12 @@ public class TravelPlace {
         this.user = user;
     }
 
-    public String getShort_description() {
-        return short_description;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setShort_description(String short_description) {
-        this.short_description = short_description;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
     public Long getId() {

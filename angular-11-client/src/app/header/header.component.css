@@ -6,6 +6,7 @@
   position: fixed;
 }
 .header-list{
+  white-space: nowrap;
   display: flex;
   justify-content: space-between;
   width: 100%;
