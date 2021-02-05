@@ -6,6 +6,7 @@ import {NgModule} from '@angular/core';
 import { CreateComponent } from './create/create.component';
 import {CKEditorModule} from 'ngx-ckeditor';
 import {ReviewComponent} from './review/review.component';
+import {CommentComponent} from '../comment/comment.component';
 
 
 const routes: Routes = [
@@ -24,13 +25,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ListComponent, CreateComponent, ReviewComponent],
+  declarations: [ListComponent, CreateComponent, ReviewComponent, CommentComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
   ]
 })
 export class DestinationModule {

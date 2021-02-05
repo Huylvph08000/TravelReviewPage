@@ -14,6 +14,7 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterModule, Routes} from '@angular/router';
 
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
@@ -42,7 +43,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, HomeComponent],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })

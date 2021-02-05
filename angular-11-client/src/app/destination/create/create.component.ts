@@ -21,6 +21,8 @@ export class CreateComponent implements OnInit {
   desForm!: FormGroup;
   public id = '';
   selectedFile!: File;
+  imageName: any;
+  message!: string;
 
   constructor(private desService: DestinationService,
               private router: Router, private tokenStorageService: TokenStorageService, private httpClient: HttpClient) {
@@ -53,8 +55,6 @@ export class CreateComponent implements OnInit {
         address: new FormControl('',
           [Validators.required,
             Validators.minLength(5)]),
-        thumbnail: new FormControl(''),
-        file: new FormControl(''),
         shortDescription: new FormControl('',
           [Validators.required,
             Validators.minLength(5)]),
@@ -65,11 +65,28 @@ export class CreateComponent implements OnInit {
     );
   }
 
+  public onFileChanged(event: { target: { files: File[]; }; }) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload() {
+    console.log(this.selectedFile);
+    const uploadImageData = new FormData();
+    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
+      .subscribe((response) => {
+          if (response.status === 200) {
+            this.message = 'Image uploaded successfully';
+          } else {
+            this.message = 'Image not uploaded successfully';
+          }
+        }
+      );
+  }
+
   onSubmit(): void {
     if (this.desForm.valid) {
       const {value} = this.desForm;
-      // const uploadImageData = new FormData();
-      // uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
       this.desService.createDes(value)
         .subscribe(result => {
           this.desList.push(result);
